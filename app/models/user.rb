@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
   def self.validate_credentials(email, password)
     user = User.find_by_email(email)
-    return user if user && BCrypt::Password(user.password_digest).is_password?(password)
+    return user if user && BCrypt::Password.new(user.password_digest).is_password?(password)
     nil
   end
 
