@@ -1,0 +1,6 @@
+<h2><%= @album.name %></h2>
+<h4>Artist: <%= link_to @album.band.name, band_url(@album.band) %></h4>
+<h3>Tracks, tracks galore!</h3>
+<ul>
+<%= render @album.tracks %>
+</ul>

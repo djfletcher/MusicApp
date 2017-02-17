@@ -1,0 +1,24 @@
+<h2>Add a Mediocre Album</h2>
+
+<form action="<%= albums_url %>" method="post">
+  <label for="album[name]">Album Name:</label>
+  <input type="text" name="album[name]">
+
+  <label for="album[band_id]"></label>
+  <select name="album[band_id]">
+    <option disabled="disabled" selected="selected">--chose band--</option>
+    <% Band.all.each do |band| %>
+    <option value="<%= band.id %>"><%= band.name %></option>
+    <% end %>
+  </select>
+
+  <br>
+
+  <label for="style_studio">Studio</label>
+  <input type="radio" id="style_studio" name="album[style]" value="Studio">
+
+  <label for="style_live">Live</label>
+  <input type="radio" id="style_live" name="album[style]" value="Live">
+
+  <input type="submit" value="Add this partially digestible album">
+</form>

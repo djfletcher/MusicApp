@@ -1,0 +1,7 @@
+<h2>Current band: "<%= @band.name %>"</h2>
+<h3>
+  <%= @band.albums.none? ? "Luckily, no poor albums yet" : "Albums, albums galore! Darn!"%>
+</h3>
+<ul>
+<%= render @band.albums %>
+</ul>
